@@ -1,0 +1,111 @@
+/* FAQ Section */
+.faq {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+}
+
+.faq .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.faq-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/*CTA*/
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, #1d3557, #457b9d); /* Deep blue gradient */
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+  }
+  
+  .cta .btn {
+    background-color: #ff6f61;
+    color: #1d3557;
+    padding: 12px 30px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .cta .btn:hover {
+    background-color: #ff6f61;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Adding responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .faq h2 {
+        font-size: 2rem;
+    }
+
+    .faq-item {
+        padding: 15px;
+    }
+
+    .faq-item h3 {
+        font-size: 1.25rem;
+    }
+}

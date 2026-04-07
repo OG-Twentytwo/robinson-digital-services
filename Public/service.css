@@ -1,0 +1,197 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Global Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Using a professional font */
+    background-color: gray; /* Lighter background for a cleaner look */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+/* Header Styles */
+header {
+    background-color:#fff;
+    color:   #212529;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700; /* Making the header more impactful */
+    letter-spacing: 1px; /* Adding space between letters for a more refined look */
+}
+
+
+h1 a {
+    color: black !important;
+  }
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+  }
+
+
+nav ul li a:hover {
+    color: #ff6f61; /* Accent color for hover */
+    transform: scale(1.1); /* Slightly scaling up the link on hover for a modern feel */
+}
+
+/* Services Section */
+.services {
+    background: #2c3e50;
+    padding: 80px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adding subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners for the whole section */
+}
+
+.services h2 {
+    font-size: 2.8em;
+    margin-bottom: 50px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.service {
+    background-color: #ffffff;
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-align: left;
+    display: inline-block;
+    width: 280px; /* Fixed width for each service card */
+    margin-bottom: 40px; /* Added bottom margin to ensure proper spacing */
+    cursor: pointer; /* Indicates that the service card is clickable */
+}
+
+.service h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.service p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6; /* Better readability */
+}
+
+.service:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px); /* Floating effect */
+}
+
+.service a {
+    text-decoration: none;
+    color: inherit; /* Ensuring the link has the same style as the text */
+}
+
+/* Service Container */
+.service-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Spacing between service cards */
+}
+
+/* Footer Section */
+footer {
+    background-color: #212529;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1.1em;
+    color: #adb5bd; /* Lighter color for footer text */
+}
+
+/* Button Style */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .services h2 {
+        font-size: 2.5em;
+    }
+
+    .service h3 {
+        font-size: 1.6em;
+    }
+
+    .service p {
+        font-size: 1em;
+    }
+
+    .service-container {
+        justify-content: center;
+    }
+
+    .service {
+        width: 100%; /* Allowing services to take up full width on small screens */
+        margin-bottom: 20px;
+    }
+}

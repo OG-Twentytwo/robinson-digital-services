@@ -1,0 +1,114 @@
+/* Pricing Section Base */
+#pricing {
+    background-color: #f7fafc;
+    padding: 4rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Section Heading */
+  #pricing h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 1rem;
+  }
+  
+  #pricing p {
+    color: #4a5568;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+  
+  /* Pricing Grid */
+  #pricing .grid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    #pricing .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Pricing Cards */
+  #pricing .grid > div {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  #pricing .grid > div:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Highlighted Plan */
+  #pricing .border-4 {
+    border-width: 4px;
+  }
+  
+  /* Plan Title & Price */
+  #pricing h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+  }
+  
+  #pricing .text-3xl {
+    font-size: 2rem;
+    color: #3182ce;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Features List */
+  #pricing ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  #pricing li {
+    color: #4a5568;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  #pricing li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #48bb78;
+  }
+  
+  /* Buttons */
+  #pricing a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  #pricing a.bg-blue-600 {
+    background-color: #3182ce;
+    color: #fff;
+  }
+  
+  #pricing a.bg-blue-600:hover {
+    background-color: #2b6cb0;
+  }
+  
+  #pricing a.bg-gray-800 {
+    background-color: #2d3748;
+    color: #fff;
+  }
+  
+  #pricing a.bg-gray-800:hover {
+    background-color: #1a202c;
+  }
+  

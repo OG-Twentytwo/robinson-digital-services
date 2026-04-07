@@ -1,0 +1,51 @@
+h1 a {
+  color: black !important;
+}
+
+  
+  /* About Section */
+  .about-section {
+    background-color: black;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .about-section h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #666;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Solo Entrepreneur Section */
+  .solo-entrepreneur-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+  }
+  
+  .solo-entrepreneur-section h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .solo-content p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  

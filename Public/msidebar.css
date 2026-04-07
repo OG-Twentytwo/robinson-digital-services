@@ -1,0 +1,131 @@
+/* Base Header Styles */
+header {
+  position: relative;
+  background-color: #fff;
+  padding: 10px 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo-container img.logo {
+  height: 40px;
+}
+
+/* Title */
+header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  color: #222;
+  margin: 0;
+}
+
+/* Hamburger Menu - Left Position */
+.menu-toggle {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #333;
+  background-color: #f2f2f2;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: grab;
+  z-index: 1001;
+}
+
+/* Make hamburger draggable */
+.menu-toggle:active {
+  cursor: grabbing;
+}
+
+/* Desktop nav hidden on small screens */
+.desktop-nav {
+  display: none;
+}
+
+/* Mobile Sidebar */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: -270px;
+  height: 100vh;
+  width: 250px;
+  background-color: #1a1a1a;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 999;
+  padding-top: 60px;
+}
+
+/* Close button inside sidebar */
+.side-nav .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+/* Sidebar Navigation List */
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-nav ul li {
+  border-bottom: 1px solid #333;
+}
+
+.side-nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.side-nav ul li a i {
+  margin-right: 10px;
+  min-width: 20px;
+}
+
+/* Active and hover state */
+.side-nav ul li a.active,
+.side-nav ul li a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Show sidebar when active */
+.side-nav.active {
+  left: 0;
+}
+
+/* Responsive: Show desktop nav on larger screens */
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .side-nav {
+    display: none;
+  }
+  .desktop-nav {
+    display: block;
+  }
+  header h1 {
+    text-align: left;
+    margin-left: 20px;
+  }
+}

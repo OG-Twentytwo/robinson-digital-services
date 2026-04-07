@@ -1,0 +1,22 @@
+# robots.txt for https://www.robinsondigitalservices.com
+
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /junk/
+Disallow: /admin/
+Disallow: /login/
+Allow: /
+
+# Optional: Crawl-delay for slower crawlers (in seconds)
+# Crawl-delay: 5
+
+# Disallow specific file types
+Disallow: /*.php$
+Disallow: /*.cgi$
+
+# Sitemap location
+Sitemap: https://www.robinsondigitalservices.com/sitemap.xml
+
+# Host (optional, used by some search engines like Yandex)
+Host: www.robinsondigitalservices.com

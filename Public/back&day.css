@@ -1,0 +1,76 @@
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    display: none; /* Hidden by default */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-top:hover {
+    background-color: #e55c50; /* Darker shade for hover */
+    transform: scale(1.1);
+}
+
+.back-to-top:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff6f61;
+}
+
+/* Show the button when scrolled down */
+.show-back-to-top {
+    display: block;
+}
+
+
+
+
+
+
+
+
+/* Day/Night Mode Toggle Button */
+.mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.mode-toggle:hover {
+    background-color: #e55c50;
+}
+
+body.day-mode {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+body.night-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.night-mode .mode-toggle {
+    background-color: #555;
+}
+
+body.night-mode .mode-toggle:hover {
+    background-color: #444;
+}

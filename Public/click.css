@@ -1,0 +1,9 @@
+h1 a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Set a color that fits with your design */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+h1 a:hover {
+    color: #ff6f61; /* Change the color on hover */
+}
