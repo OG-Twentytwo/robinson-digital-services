@@ -1,454 +1,1519 @@
-/* --- 1. RESET & BASE --- */
+/* --- THE RESPONSIVE HERO ENGINE --- */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.landing {
+    position: relative;
+    padding: 160px 0 120px 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #060807;
+    /* Dark obsidian foundation */
 }
 
-:root {
-    --black: #000000;
-    --white: #ffffff;
-    --grey-bg: #f4f4f4;
-    --grey-border: #e0e0e0;
-    --text-muted: #555555;
-    --font-inter: 'Inter', sans-serif;
-}
 
-body {
-    font-family: var(--font-inter);
-    color: var(--black);
-    line-height: 1.6;
+/* --- AMBIENT BACKDROP SLIDESHOW SYSTEM --- */
+
+.landing-slideshow {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    overflow-x: hidden;
+    height: 100%;
+    z-index: 1;
 }
 
-
-/* GLOBAL CONTAINER - The anchor for your site's alignment */
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
+.landing-slideshow .slide {
+    position: absolute;
+    inset: 0;
     width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
-.text-center {
-    text-align: center;
+
+/* Alpha opacity layer allows backgrounds to show without overriding text clarity */
+
+.landing-slideshow .slide.active {
+    opacity: 0.12;
 }
 
-h2 {
-    font-size: clamp(2.5rem, 5vw, 3rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+
+/* Deep vignette gradient protection mask */
+
+.landing::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6, 8, 7, 0.8) 0%, #060807 100%);
+    z-index: 2;
+    pointer-events: none;
 }
 
-.label {
-    display: block;
-    font-weight: 600;
+
+/* Layout Framework Grid Architecture */
+
+.landing-grid {
+    position: relative;
+    z-index: 3;
+    /* Positions interactive elements safely over background panels */
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+
+/* Left Column Styling */
+
+.hero-content-block {
+    text-align: left;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 255, 163, 0.05);
+    border: 1px solid rgba(0, 255, 163, 0.15);
+    color: #00ffa3;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 0.85rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    color: var(--black);
-}
-
-
-/* --- 2. BUTTONS --- */
-
-button,
-.btn-primary,
-.btn-secondary,
-.btn-nav,
-.btn-outline,
-.btn-black,
-.btn-text {
-    cursor: pointer;
-    font-family: var(--font-inter);
-    font-weight: 600;
-    transition: 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    border: 1px solid var(--black);
-}
-
-.btn-primary,
-.btn-black {
-    background: var(--black);
-    color: var(--white);
-    padding: 12px 28px;
-}
-
-.btn-secondary,
-.btn-outline,
-.btn-text {
-    background: transparent;
-    color: var(--black);
-    padding: 12px 28px;
-}
-
-.btn-primary:hover,
-.btn-black:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
-}
-
-.btn-secondary:hover,
-.btn-outline:hover,
-.btn-text:hover {
-    background: #f0f0f0;
-    transform: translateY(-2px);
-}
-
-
-/* --- 3. HEADER & NAV --- */
-
-.main-header {
-    width: 100%;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-}
-
-.header-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.logo-group h1 {
-    font-size: 1.25rem;
-    font-weight: 800;
-}
-
-.logo-group h1 a {
-    color: #000;
-    text-decoration: none;
-}
-
-.desktop-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    list-style: none;
-}
-
-.desktop-nav ul li a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
-.desktop-nav ul li a:hover {
-    color: #000;
-}
-
-
-/* --- 4. HERO SECTION --- */
-
-.hero {
-    padding: 100px 0 60px;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 800;
     margin-bottom: 24px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.hero .subtitle {
-    font-size: clamp(1.1rem, 2vw, 1.25rem);
-    color: var(--text-muted);
-    max-width: 750px;
-    margin: 0 auto 40px;
+.hero-content-block h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #d1d5db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero-btns {
+.hero-content-block p {
+    color: #9ca3af;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 36px;
+    max-width: 600px;
+}
+
+.hero-actions {
     display: flex;
     gap: 16px;
+    align-items: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #f3f4f6;
+    color: #060807;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: #f3f4f6;
+    border-color: #f3f4f6;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+.hero-secondary-btn {
+    padding: 14px 32px;
+}
+
+
+/* --- THE AVATAR ORBITAL MECHANICS --- */
+
+.landing-right {
+    display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.profile-circle {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(0, 255, 163, 0.05);
+}
+
+.profile-img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* Social Icon Core Configurations */
+
+.social-icon {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(18, 22, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 5;
+}
+
+.social-icon a {
+    color: #f3f4f6;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+
+/* Angular Ring Coordinates Mapping */
+
+.social-icon.facebook {
+    top: 10%;
+    left: 10%;
+}
+
+.social-icon.twitter {
+    top: 10%;
+    right: 10%;
+}
+
+.social-icon.linkedin {
+    bottom: 10%;
+    right: 10%;
+}
+
+.social-icon.instagram {
+    bottom: 10%;
+    left: 10%;
+}
+
+
+/* Adaptive Brand Glow Hover Transformations */
+
+.social-icon:hover {
+    transform: scale(1.15);
+}
+
+.social-icon:hover a {
+    color: #060807;
+}
+
+.social-icon.facebook:hover {
+    background: #1877f2;
+    border-color: #1877f2;
+    box-shadow: 0 0 15px rgba(24, 119, 242, 0.4);
+}
+
+.social-icon.twitter:hover {
+    background: #1da1f2;
+    border-color: #1da1f2;
+    box-shadow: 0 0 15px rgba(29, 161, 242, 0.4);
+}
+
+.social-icon.linkedin:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.4);
+}
+
+.social-icon.instagram:hover {
+    background: #e1306c;
+    border-color: #e1306c;
+    box-shadow: 0 0 15px rgba(225, 48, 108, 0.4);
+}
+
+
+/* --- RESPONSIVE MEDIA ADAPTATION LAYER --- */
+
+
+/* ==========================================================================
+   --- MOBILE RESPONSIVE ADAPTATION LAYER ---
+   ========================================================================== */
+
+
+/* --- TABLET MEDIA CONTROLLER --- */
+
+@media (max-width: 1024px) {
+    .landing {
+        padding: 140px 0 100px 0;
+    }
+    .hero-content-block h1 {
+        font-size: 2.8rem;
+    }
+    /* Scaling the orbital frame dynamically to match viewport constraints */
+    .profile-circle {
+        width: 280px;
+        height: 280px;
+    }
+    .profile-img {
+        width: 195px;
+        height: 195px;
+    }
+    /* Re-mapping social placement ratios slightly for smaller frame */
+    .social-icon.facebook {
+        top: 8%;
+        left: 8%;
+    }
+    .social-icon.twitter {
+        top: 8%;
+        right: 8%;
+    }
+    .social-icon.linkedin {
+        bottom: 8%;
+        right: 8%;
+    }
+    .social-icon.instagram {
+        bottom: 8%;
+        left: 8%;
+    }
+}
+
+
+/* --- MOBILE BREAKPOINT CONTROLLER --- */
+
+@media (max-width: 768px) {
+    .landing {
+        padding: 120px 0 80px 0;
+        min-height: auto;
+    }
+    /* Stack left content block and right profile elements vertically */
+    .landing-grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+        text-align: center;
+    }
+    .hero-content-block {
+        text-align: center;
+    }
+    .hero-content-block h1 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+    .hero-content-block p {
+        font-size: 1rem;
+        margin: 0 auto 32px auto;
+    }
+    /* Center-align action layout wrappers */
+    .hero-actions {
+        justify-content: center;
+    }
+    /* Shift position layout orders so title always drops before profile */
+    .landing-right {
+        order: 2;
+    }
+    .hero-content-block {
+        order: 1;
+    }
+}
+
+
+/* --- SMALL MOBILE VISUAL OPTIMIZATIONS --- */
+
+@media (max-width: 480px) {
+    .landing {
+        padding: 100px 0 60px 0;
+    }
+    .hero-content-block h1 {
+        font-size: 1.85rem;
+        letter-spacing: -0.01em;
+    }
+    /* Stack buttons inline-flat if space gets intensely compressed */
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        gap: 12px;
+    }
+    .btn-primary,
+    .cta-btn.hero-secondary-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 24px;
+    }
+    /* Ensure structural framework doesn't overflow slim devices */
+    .profile-circle {
+        width: 240px;
+        height: 240px;
+    }
+    .profile-img {
+        width: 165px;
+        height: 165px;
+        border-width: 3px;
+    }
+    .social-icon {
+        width: 38px;
+        height: 38px;
+    }
+    .social-icon a {
+        font-size: 0.95rem;
+    }
+    /* Micro-adjust positional layout markers for extreme mobile devices */
+    .social-icon.facebook {
+        top: 5%;
+        left: 5%;
+    }
+    .social-icon.twitter {
+        top: 5%;
+        right: 5%;
+    }
+    .social-icon.linkedin {
+        bottom: 5%;
+        right: 5%;
+    }
+    .social-icon.instagram {
+        bottom: 5%;
+        left: 5%;
+    }
+}
+
+
+/*Hero end*/
+
+
+/*Services section*/
+
+
+/* --- SERVICES BENTO MATRIX DESIGN --- */
+
+.services-section {
+    padding: 120px 0;
+    background-color: #060807;
+    /* Matches main project aesthetic */
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
     margin-bottom: 64px;
 }
 
-.hero-image-placeholder {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid var(--grey-border);
-}
-
-.hero-image-placeholder img {
-    width: 100%;
-    display: block;
-}
-
-
-/* --- 5. SERVICES GRID --- */
-
-.services {
-    padding: 80px 0;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
-}
-
-.card-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: var(--grey-bg);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #eee;
-    overflow: hidden;
-}
-
-.card-image img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    padding: 15px;
-    transition: transform 0.4s ease;
-}
-
-.service-card:hover .card-image img {
-    transform: scale(1.08);
-}
-
-
-/* --- 6. APPROACH SECTION (FIXED ALIGNMENT) --- */
-
-.approach {
-    padding: 100px 0;
-    background-color: var(--white);
-}
-
-.approach-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-}
-
-.approach-content {
-    position: sticky;
-    top: 120px;
-}
-
-.description {
-    font-size: 1.125rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-}
-
-.approach-image-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.image-box {
-    width: 100%;
-    height: 400px;
-    background: var(--grey-bg);
-    border: 1px solid var(--grey-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.image-box img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    padding: 20px;
-}
-
-.approach-actions {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-top: 32px;
-}
-
-
-/* --- 7. RESULTS SECTION --- */
-
-.results {
-    padding: 100px 0;
-}
-
-.results-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.video-box {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #808080;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.play-btn {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: var(--white);
-    border: none;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.stats-list {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.stat-number {
-    font-size: 2.5rem;
+.section-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.8rem;
     font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    background: linear-gradient(180deg, #ffffff 0%, #a3a3a3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.stat-text {
-    font-weight: 600;
-    color: #333;
+.section-header p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #9ca3af;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
 }
 
 
-/* --- 8. TESTIMONIALS --- */
+/* Base Matrix Structure */
 
-.testimonials {
-    padding: 100px 0;
-}
-
-.testimonial-grid {
+.bento-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
-}
-
-.quote {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 32px;
-}
-
-.avatar-circle {
-    width: 56px;
-    height: 56px;
-    background: #e5e5e5;
-    border-radius: 50%;
-    margin-bottom: 12px;
+    gap: 24px;
+    width: 100%;
 }
 
 
-/* --- 9. FOOTER --- */
+/* Card Foundation Architecture */
 
-.main-footer {
-    padding-top: 80px;
-    border-top: 1px solid var(--grey-border);
-}
-
-.footer-cta {
-    padding-bottom: 80px;
-    border-bottom: 1px solid var(--grey-border);
-}
-
-.footer-middle {
-    padding: 80px 0;
-}
-
-.newsletter-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.newsletter-form {
+.bento-card {
+    background: rgba(18, 22, 20, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 36px;
     display: flex;
-    gap: 12px;
-    margin-top: 24px;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-.newsletter-form input {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid var(--black);
+
+/* Custom Spanning Variances */
+
+.bento-card.span-2 {
+    grid-column: span 2;
 }
 
-.footer-bottom {
-    padding: 40px 0;
-    border-top: 1px solid var(--black);
+.bento-card.span-3 {
+    grid-column: span 3;
 }
 
-.footer-brand-row,
-.copyright-row {
+
+/* Ambient Inner Glow Ring on Hover */
+
+.bento-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(0, 255, 163, 0.2), transparent 40%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+
+/* Icon Graphics Architecture */
+
+.bento-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(0, 255, 163, 0.04);
+    border: 1px solid rgba(0, 255, 163, 0.15);
+    color: #00ffa3;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    transition: all 0.4s ease;
+}
+
+
+/* Text Content Formats */
+
+.bento-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #f3f4f6;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.bento-content p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+
+/* Dynamic Text Anchors */
+
+.bento-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #f3f4f6;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.bento-link i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+
+/* --- ADAPTIVE INTERACTION STATES --- */
+
+.bento-card:hover {
+    transform: translateY(-6px);
+    background: rgba(18, 22, 20, 0.7);
+    border-color: rgba(0, 255, 163, 0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 255, 163, 0.03);
+}
+
+.bento-card:hover::before {
+    opacity: 1;
+}
+
+.bento-card:hover .bento-icon {
+    background: #00ffa3;
+    color: #060807;
+    box-shadow: 0 0 20px rgba(0, 255, 163, 0.3);
+}
+
+.bento-card:hover .bento-link {
+    color: #00ffa3;
+}
+
+.bento-card:hover .bento-link i {
+    transform: translateX(4px);
+}
+
+
+/* ==========================================================================
+   --- MOBILE RESPONSIVE MEDIA QUERIES ---
+   ========================================================================== */
+
+
+/* ==========================================================================
+   --- SERVICES MATRIX RESPONSIVE LAYER ---
+   ========================================================================== */
+
+
+/* --- LAPTOPS & TABLETS (1024px Breakpoint) --- */
+
+@media (max-width: 1024px) {
+    .services-section {
+        padding: 100px 0;
+    }
+    .section-header h2 {
+        font-size: 2.4rem;
+    }
+    /* Shift from 3 columns to 2 columns */
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    /* Standardize wide cards to fit the 2-column structure gracefully */
+    .bento-card.span-3 {
+        grid-column: span 2;
+    }
+    .bento-card {
+        padding: 28px;
+    }
+}
+
+
+/* --- SMALL TABLETS & MOBILE PHONES (768px Breakpoint) --- */
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 80px 0;
+    }
+    .section-header {
+        margin-bottom: 44px;
+    }
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    .section-header p {
+        font-size: 1rem;
+    }
+    /* Break the grid entirely into a beautiful single vertical column stream */
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    /* Strip all desktop layout column overrides completely */
+    .bento-card,
+    .bento-card.span-2,
+    .bento-card.span-3 {
+        grid-column: span 1;
+        padding: 24px;
+        gap: 24px;
+        /* Slightly tighter internal spacing */
+    }
+    .bento-content h3 {
+        font-size: 1.25rem;
+    }
+    /* Tone down the translate hover action on mobile devices for cleaner scrolling */
+    .bento-card:hover {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* --- ULTRA-SMALL SMARTPHONES (480px Breakpoint) --- */
+
+@media (max-width: 480px) {
+    .services-section {
+        padding: 60px 0;
+    }
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+    .bento-card {
+        padding: 20px;
+    }
+    .bento-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 1.15rem;
+    }
+}
+
+
+/*Service end*/
+
+
+/*portfolio-section */
+
+
+/* --- THE DEPLOYMENT LEDGER PORTFOLIO GRID --- */
+
+.portfolio-section {
+    padding: 120px 0;
+    background-color: #060807;
+    /* Matches obsidian system theme */
+    position: relative;
+}
+
+
+/* Portfolio Layout Architecture Grid */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Premium dual-column distribution */
+    gap: 32px;
+    width: 100%;
+}
+
+
+/* Project Card Structural Blueprint */
+
+.project-card {
+    background: rgba(18, 22, 20, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+
+/* Image Asset Window Frame */
+
+.project-visual {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: #121614;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+
+/* Metadata Configuration Badges */
+
+.project-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 18px;
+    gap: 12px;
 }
 
-.footer-nav {
-    display: flex;
-    gap: 24px;
-    list-style: none;
-}
-
-.footer-nav a {
-    text-decoration: none;
-    color: var(--black);
+.project-badge {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #9ca3af;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 
-/* --- 10. RESPONSIVE --- */
+/* Accent Badges for Highlights */
 
-@media (max-width: 991px) {
-    .services-grid,
-    .testimonial-grid {
+.project-badge.hospitality {
+    color: #00ffa3;
+    background: rgba(0, 255, 163, 0.03);
+    border-color: rgba(0, 255, 163, 0.15);
+}
+
+.project-badge.creative {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.03);
+    border-color: rgba(56, 189, 248, 0.15);
+}
+
+.credit-badge {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+
+/* Typography Assignments */
+
+.project-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f3f4f6;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.project-desc {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    flex-grow: 1;
+    /* Pushes action link cleanly to footer block boundary */
+}
+
+
+/* Call To Action Anchor Element */
+
+.portfolio-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #f3f4f6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: max-content;
+}
+
+.portfolio-cta i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+
+/* --- DYNAMIC RENDERING INTERACTION HOVERS --- */
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(18, 22, 20, 0.5);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Flagship Cards Premium Hover Enhancements */
+
+.project-card.feature-highlight:hover {
+    border-color: rgba(0, 255, 163, 0.2);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 163, 0.02);
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.04);
+    opacity: 1;
+}
+
+.project-card:hover .portfolio-cta {
+    color: #00ffa3;
+}
+
+.project-card:hover .portfolio-cta i {
+    transform: translate(2px, -2px);
+}
+
+
+/* ==========================================================================
+   --- PORTFOLIO RESPONSIVE MOBILE STYLE LAYERS ---
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        gap: 24px;
+    }
+    .project-card {
+        padding: 22px;
+    }
+    .project-visual {
+        height: 190px;
+        margin-bottom: 20px;
+    }
+    .project-title {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-section {
+        padding: 80px 0;
+    }
+    /* Collapse down to crisp singular content stacks */
+    .portfolio-grid {
         grid-template-columns: 1fr;
-    }
-    .approach-grid,
-    .results-grid,
-    .newsletter-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .approach-content {
-        position: relative;
-        top: 0;
-    }
-    .footer-brand-row,
-    .copyright-row {
-        flex-direction: column;
         gap: 20px;
-        text-align: center;
+    }
+    .project-card {
+        padding: 24px;
+        border-radius: 12px;
+    }
+    .project-visual {
+        height: 210px;
+        /* Standardize visible real-estate on mobile phones */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-section {
+        padding: 60px 0;
+    }
+    .project-card {
+        padding: 16px;
+    }
+    .project-visual {
+        height: 170px;
+        margin-bottom: 16px;
+    }
+    .project-title {
+        font-size: 1.2rem;
+    }
+    .project-desc {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+}
+
+
+/*portfolio-section  end*/
+
+
+/*About Us Section */
+
+
+/* --- THE SYSTEM ARCHITECTS SECTION --- */
+
+.about-section {
+    padding: 120px 0;
+    background-color: #060807;
+    /* Consistent obsidian block foundation */
+    position: relative;
+}
+
+
+/* Dual Column Profile Alignment Layout */
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* Individual Personnel Profile Card Structure */
+
+.profile-card {
+    background: rgba(18, 22, 20, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 48px 36px;
+    width: 50%;
+    /* Uniform balanced side-by-side splits */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+
+/* High-Contrast Avatar Text Frame Elements */
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 255, 163, 0.1) 0%, rgba(0, 255, 163, 0.01) 100%);
+    border: 1px solid rgba(0, 255, 163, 0.3);
+    color: #00ffa3;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    box-shadow: 0 0 30px rgba(0, 255, 163, 0.05);
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+
+/* Secondary Strategic Variant Tint */
+
+.profile-avatar.sam {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(56, 189, 248, 0.01) 100%);
+    border-color: rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.05);
+}
+
+
+/* Backward compatibility feature to swap to image paths smoothly */
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Architecture Typography Forms */
+
+.profile-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f3f4f6;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.profile-role {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #00ffa3;
+    /* Bright tech identifier */
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+}
+
+.profile-card:has(.sam) .profile-role {
+    color: #38bdf8;
+    /* Blue accent pairing for Samuel */
+}
+
+.profile-bio {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #9ca3af;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 32px;
+    flex-grow: 1;
+    /* Aligns buttons linearly along card baselines */
+}
+
+
+/* Override Specific Button Configurations */
+
+.profile-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    color: #f3f4f6;
+}
+
+
+/* --- ADAPTIVE ARCHITECTURE INTERACTION STATES --- */
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(18, 22, 20, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.profile-card:hover .profile-avatar {
+    transform: scale(1.05);
+    background: #00ffa3;
+    color: #060807;
+    box-shadow: 0 0 25px rgba(0, 255, 163, 0.25);
+}
+
+.profile-card:hover .profile-avatar.sam {
+    background: #38bdf8;
+    color: #060807;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+.profile-card:hover .profile-btn {
+    background: #f3f4f6;
+    color: #060807;
+    border-color: transparent;
+}
+
+
+/* ==========================================================================
+   --- MOBILE RESPONSIVE MEDIA QUERIES ---
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .profile-card {
+        padding: 40px 24px;
+    }
+    .profile-card h3 {
+        font-size: 1.45rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 80px 0;
+    }
+    /* Convert horizontally floating items into structural vertical lines */
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .profile-card {
+        width: 100%;
+        max-width: 480px;
+        /* Constrains card growth for smartphone screens */
+        padding: 36px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 60px 0;
+    }
+    .profile-card {
+        padding: 32px 20px;
+    }
+    .profile-card h3 {
+        font-size: 1.3rem;
+    }
+    .profile-bio {
+        font-size: 0.92rem;
+        margin-bottom: 24px;
+    }
+}
+
+
+/*About Us end*/
+
+
+/* --- FRICTIONLESS FAQ ACCORDION --- */
+
+.faq-section {
+    padding: 120px 0;
+    background-color: #060807;
+    /* Unified platform dark space */
+    position: relative;
+}
+
+
+/* Centralized Max-Width Container Wrapper */
+
+.faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+
+/* Individual Content Container Block */
+
+.faq-item {
+    background: rgba(18, 22, 20, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* Interactive Accordion Trigger Header Element */
+
+.faq-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 28px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #e5e7eb;
+    gap: 20px;
+    transition: color 0.3s ease;
+}
+
+.faq-trigger span {
+    pointer-events: none;
+}
+
+
+/* Indicator Chevron Icon Architecture */
+
+.faq-trigger i {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+    pointer-events: none;
+}
+
+
+/* Fluid Animation Max-Height Containment Window */
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+/* Padding Wrapper inside Content Window to Prevent Structural Stutter */
+
+.faq-inner-container {
+    padding: 0 28px 24px 28px;
+}
+
+.faq-inner-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #9ca3af;
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+
+/* --- ACTIVE ACCORDION INTERACTION OVERRIDES --- */
+
+.faq-item:hover {
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(18, 22, 20, 0.4);
+}
+
+.faq-item.active {
+    background: rgba(18, 22, 20, 0.5);
+    border-color: rgba(0, 255, 163, 0.15);
+    /* Subtle brand system border glow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item.active .faq-trigger {
+    color: #00ffa3;
+    /* Active accent color */
+}
+
+.faq-item.active .faq-trigger i {
+    transform: rotate(180deg);
+    color: #00ffa3;
+}
+
+.faq-item.active .faq-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ==========================================================================
+   --- MOBILE RESPONSIVE MEDIA LAYERS ---
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 80px 0;
+    }
+    .faq-trigger {
+        padding: 20px 24px;
+        font-size: 1.05rem;
+    }
+    .faq-inner-container {
+        padding: 0 24px 20px 24px;
+    }
+    .faq-inner-text {
+        font-size: 0.94rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 60px 0;
+    }
+    .faq-trigger {
+        padding: 18px 20px;
+        font-size: 1rem;
+    }
+    .faq-inner-container {
+        padding: 0 20px 18px 20px;
+    }
+    .faq-inner-text {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+}
+
+
+/*Engagement*/
+
+
+/* --- ENGAGEMENT TIERS SECTION --- */
+
+.tiers-section {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tier-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tier-card.active {
+    border-color: #00ffa3;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 163, 0.1);
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 20px 0;
+    color: #ffffff;
+}
+
+.sub-price {
+    display: block;
+    font-size: 0.9rem !important;
+    color: #9ca3af !important;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.tier-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.tier-card ul li {
+    margin-bottom: 10px;
+    color: #d1d5db;
+    font-size: 0.95rem;
+}
+
+.tier-card ul li::before {
+    content: "▹";
+    color: #00ffa3;
+    margin-right: 10px;
+}
+
+
+/* --- CREATIVE ADD-ONS --- */
+
+.creative-add-ons {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.creative-add-ons h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.add-on-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.add-on-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.add-on-card h4 {
+    margin-bottom: 10px;
+    color: #00ffa3;
+}
+
+.add-on-card p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-bottom: 15px;
+}
+
+.add-on-price {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+
+/* --- BUTTONS --- */
+
+.tier-btn {
+    display: block;
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.tier-btn.primary {
+    background: #00ffa3;
+    color: #060807;
+}
+
+.tier-btn:hover {
+    background: #ffffff;
+    color: #060807;
+}
+
+.recurring-costs {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0, 255, 163, 0.05);
+    /* Slight green tint for distinction */
+    border: 1px dashed #00ffa3;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.costs-box h4 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.cost-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.cost-items span {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.tier-desc {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 15px;
+}
+
+
+/*Engagement mobile section */
+
+
+/* --- MOBILE RESPONSIVENESS (Screens < 768px) --- */
+
+@media (max-width: 768px) {
+    .tiers-section {
+        padding: 40px 0;
+    }
+    .tiers-grid {
+        grid-template-columns: 1fr;
+        /* Force cards to stack */
+        gap: 20px;
+    }
+    .tier-card {
+        padding: 25px;
+        /* Less padding for smaller screens */
+    }
+    .tier-card.active {
+        transform: translateY(0);
+        /* Remove the lift on mobile to save space */
+    }
+    .price {
+        font-size: 2rem;
+        /* Slightly smaller text */
+    }
+    .add-on-grid {
+        grid-template-columns: 1fr;
+        /* Stack add-ons */
+    }
+    .cost-items {
+        flex-direction: column;
+        /* Stack domain/hosting costs vertically */
+        gap: 10px;
+    }
+    .section-header h2 {
+        font-size: 1.8rem;
     }
 }

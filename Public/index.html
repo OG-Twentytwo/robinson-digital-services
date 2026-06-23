@@ -86,71 +86,65 @@
     <link rel="stylesheet" href="ball.css">
     <link rel="stylesheet" href="faq.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+
+    <link rel="stylesheet" href="genstyle.css">
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="btn.css">
+
+
 </head>
 
 
 <body>
 
-
     <header>
-        <div class="container" style="display: flex; align-items: center; gap: 10px;">
-            <a href="index.html">
-                <img src="img/logo.png" alt="Robinson Digital Services Logo" style="height: 60px;">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="favicon.ico/favicon.png" alt="RDS Logo" class="nav-logo-asset">
             </a>
 
-            <h1><a href="index.html">Robinson Digital Services</a></h1>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="operational-capabilities.html">Capabilities</a></li>
+                    <li><a href="deployment-ledger.html">Deployment Ledger</a></li>
+                    <li><a href="architects.html">Architects</a></li>
+                    <li><a href="faq.html">Frictionless FAQ</a></li>
+                    <li><a href="engagement-tiers.html">Engagement Tiers</a></li>
+                </ul>
+            </nav>
+
+            <a href="#" class="cta-btn nav-desktop-cta">Command Audit</a>
         </div>
-
-
-        <div class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i>
-        </div>
-
-
-        <nav class="desktop-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="booking.html">Book a Consultation</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </nav>
-
-
-        <nav id="sideNav" class="side-nav">
-            <button class="close-btn" id="closeBtn"><i class="fas fa-times"></i></button>
-            <ul>
-                <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
-                <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
-                <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
-                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
-                <li><a href="booking.html"><i class="fas fa-calendar-check"></i> Book a Consultation</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                <li><a href="about.html"><i class="fas fa-user"></i> About Us</a></li>
-            </ul>
-        </nav>
     </header>
 
 
 
-    <a href="#" class="back-to-top">Back to Top</a>
-
-
-    <button class="mode-toggle" id="modeToggle">🌙</button>
-
-
-
     <section class="landing">
-        <div class="container">
-            <div class="landing-left">
-                <h2>Build a Successful Website Today</h2>
-                <p>I help businesses and individuals stand out online with custom web solutions and digital strategy.</p>
-                <a href="booking.html" class="btn">Hire Us</a>
+        <div class="landing-slideshow">
+            <div class="slide active" style="background-image: url('img/brown.PNG');"></div>
+            <div class="slide" style="background-image: url('img/home.png');"></div>
+            <div class="slide" style="background-image: url('img/paecho.png');"></div>
+        </div>
+
+        <div class="container landing-grid">
+            <div class="hero-content-block">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-terminal"></i> Digital Operations & Systems Architected
+                </div>
+                <h1>We Build High-Performance Digital Solutions That Stand Out Online</h1>
+                <p>I help businesses and individuals scale with premier web engineering, multi-platform development, automated AI operations, and highly aggressive search engine visibility strategies.</p>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Hire Our Agency</a>
+                    <a href="#services" class="cta-btn hero-secondary-btn">Explore Matrix</a>
+                </div>
             </div>
 
             <div class="landing-right">
@@ -180,311 +174,506 @@
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!--Services section-->
+
+    <section class="services-section" id="services">
         <div class="container">
-            <h2>Your Digital Solutions Awaits</h2>
-            <p>We offer web development, SEO Services (AI & Traditional), AI Chatbots, Google Ads & AdSense Management, and more to help your business grow.</p>
-            <a href="booking.html" class="btn">Book a Consultation</a>
-        </div>
-    </section>
-
-
-    <div class="image-container">
-        <img src="img/Built with Passion at Robinson Digital Services.jpg" class="brand-image" alt="Banner">
-
-
-    </div>
-
-    <!-- Client Projects Section -->
-    <section class="client-projects">
-        <h2>Our Work at Robinson Digital Services</h2>
-        <div class="projects-grid">
-
-            <div class="project">
-                <a href="https://2237news.com/" target="_blank">
-                    <img src="img/Screenshot (347).PNG" alt="2237 News Website Screenshot">
-                    <h3>2237 News</h3>
-                </a>
-                <p>A fast-growing news platform delivering accurate, transparent, and timely stories. Built with a full-featured CMS, team section, market grid, and mobile responsiveness.<br><strong>By Robinson Digital Services</strong>
-                </p>
+            <div class="section-header">
+                <h2>Operational Capabilities</h2>
+                <p>An array of enterprise-grade solutions tailored for maximum modern market scaling.</p>
             </div>
 
-            <div class="project">
-                <a href="https://www.reliablefireandsafetyconsultancy.com/" target="_blank">
-                    <img src="img/Screenshot (386).PNG" alt="Reliable Fire and Safety Screenshot">
-                    <h3>Reliable Fire and Safety Consultancy</h3>
-                </a>
-                <p>A responsive website built to showcase firefighting, logistics, and training services. Features include certifications, emergency contacts, and a bold red-orange theme.<br><strong>By Robinson Digital
-            Services</strong></p>
-            </div>
-
-            <div class="project">
-                <a href="https://panafricanistpromotionteam.com/" target="_blank">
-                    <img src="img/Screenshot (346).PNG" alt="Pan Africanist Promotion Team Screenshot">
-                    <h3>Pan Africanist Promotion Team</h3>
-                </a>
-                <p>A dynamic platform uniting Africans and promoting Pan-African values with an interactive map, advocacy pages, and business directory — all crafted with cultural identity in mind.<br><strong>By Robinson Digital
-            Services</strong></p>
-            </div>
-
-            <div class="project">
-                <a href="https://wolo-s-birds.firebaseapp.com/" target="_blank">
-                    <img src="img/wolo.png" alt="Wolo's Birds Website Screenshot">
-                    <h3>Wolo's Birds</h3>
-                </a>
-                <p>A beautifully designed bird showcase platform highlighting different bird species with engaging visuals and educational content. Built to provide a smooth and mobile-friendly browsing experience.<br><strong>By Robinson Digital Services</strong></p>
-            </div>
-
-            <div class="project">
-                <a href="https://homesadventures.com/" target="_blank">
-                    <img src="img/home.png" alt="Homes Adventures Website Screenshot">
-                    <h3>Homes Adventures</h3>
-                </a>
-                <p>A professional service website for electrical installations and home repair solutions. The platform features service listings, modern layout, and responsive design for easy customer access.<br><strong>By Robinson Digital Services</strong></p>
-            </div>
-
-            <div class="project">
-                <a href="https://paecho.org/" target="_blank">
-                    <img src="img/paecho.png" alt="PAECHO Organization Website Screenshot">
-                    <h3>PAECHO Organization</h3>
-                </a>
-                <p>A nonprofit organization website designed to promote community development, advocacy, and social impact initiatives with a clear mission-focused layout and user-friendly navigation.<br><strong>By Robinson Digital Services</strong></p>
-            </div>
-
-            <div class="project">
-                <a href="https://brownerica1-cf5cd.web.app/" target="_blank">
-                    <img src="img/brown.PNG" alt="Brownerica General Trading Website Screenshot">
-                    <h3>Brownerica General Trading Ltd</h3>
-                </a>
-                <p>A modern company website highlighting services, vision, and business operations. Designed with a clean layout, bold branding, and optimized performance for a strong digital presence.<br><strong>By Robinson Digital Services</strong></p>
-            </div>
-
-        </div>
-    </section>
-
-
-
-
-
-
-
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>What’s included in the Starter Plan?</h3>
-                <p>The Starter Plan includes a 1-page responsive website, basic SEO optimization, Google Analytics setup, and more.
-                </p>
-            </div>
-            <div class="faq-item">
-                <h3>How long does it take to complete a project?</h3>
-                <p>Typically, our projects are completed within 15-22 days depending on the complexity and requirements.But 1-5 page responsive website 7-10 days</p>
-            </div>
-            <!-- Add more FAQ items -->
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container text-center">
-            <h2>Ready to Take Your Business Online?</h2>
-            <p>Our digital solutions will help you stand out in the market. Let’s make it happen.</p>
-            <a href="services.html" class="btn">Learn More</a>
-        </div>
-    </section>
-
-
-
-    <div class="contact-widget-container">
-        <a href="https://wa.me/256708976080" target="_blank" class="contact-link" aria-label="Chat on WhatsApp">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-        </a>
-        <a href="tel:+256708976080" class="contact-link" aria-label="Call Phone">
-            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone 1" />
-        </a>
-        <a href="tel:+256766505568" class="contact-link" aria-label="Call Phone">
-            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone 2" />
-        </a>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <!-- Left -->
-                <div class="footer-left">
-                    <p>&copy; 2025 Robinson Digital Services | All Rights Reserved</p>
+            <div class="bento-grid">
+                <div class="bento-card span-2">
+                    <div class="bento-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="bento-content">
+                        <h3>Custom Web Development</h3>
+                        <p>Tailored web architectures designed for high performance. From fluid e-commerce systems to complex, high-traffic web platforms built with optimized, clean source files.</p>
+                        <a href="#contact" class="bento-link">Book Configuration <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Middle -->
-                <div class="footer-middle">
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <div class="bento-content">
+                        <h3>Mobile Application Development</h3>
+                        <p>High-performance, secure, native and cross-platform application design for Android and iOS systems.</p>
+                        <a href="#contact" class="bento-link">Deploy App <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <div class="bento-content">
+                        <h3>SEO Services (AI & Traditional)</h3>
+                        <p>Dominate high-value search visibility. Merging predictive AI keyword systems with meticulous traditional link and indexing architecture.</p>
+                        <a href="#contact" class="bento-link">Command Traffic <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card span-2">
+                    <div class="bento-icon"><i class="fa-solid fa-rectangle-ad"></i></div>
+                    <div class="bento-content">
+                        <h3>Google Ads & AdSense Management</h3>
+                        <p>Architecting targeted ad groups, high-impact headlines, and clean bid strategies for conversion. We optimize structural monetization paths to scale digital revenue seamlessly.</p>
+                        <a href="#contact" class="bento-link">Optimize Campaigns <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bento-content">
+                        <h3>Autonomous AI Chatbots</h3>
+                        <p>24/7 intelligent contextual customer engagement agents built to capture, qualify, and route leads without structural friction.</p>
+                        <a href="#contact" class="bento-link">Integrate Agent <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                    <div class="bento-content">
+                        <h3>Social Media Marketing</h3>
+                        <p>Content designed to engage users directly, building structural authority across digital platforms.</p>
+                        <a href="#contact" class="bento-link">Scale Brand <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="bento-content">
+                        <h3>Digital Marketing & SEO Strategy</h3>
+                        <p>A unified blueprint combining search positioning, targeted pay-per-click setups, and structured content maps.</p>
+                        <a href="#contact" class="bento-link">Formulate Map <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <div class="bento-content">
+                        <h3>Website Analytics & Tracking</h3>
+                        <p>Advanced Google Analytics tracking matrices to study and optimize user interactions down to the pixel.</p>
+                        <a href="#contact" class="bento-link">Analyze Flow <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="bento-content">
+                        <h3>Website Security & SSL Matrix</h3>
+                        <p>Comprehensive security layers featuring firewalls, threat monitoring, and robust security parameters.</p>
+                        <a href="#contact" class="bento-link">Secure Assets <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="bento-content">
+                        <h3>Web Performance Optimization</h3>
+                        <p>Accelerating performance by prioritizing quick layout rendering, optimized images, and responsive scaling.</p>
+                        <a href="#contact" class="bento-link">Accelerate Speed <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div class="bento-content">
+                        <h3>Website Maintenance & Support</h3>
+                        <p>Proactive monitoring, routine cloud updates, and rapid security patches to ensure maximum availability.</p>
+                        <a href="#contact" class="bento-link">Retain Support <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-sliders"></i></div>
+                    <div class="bento-content">
+                        <h3>CMS Architecture Integration</h3>
+                        <p>Fluid, intuitive control panel deployments across modular frameworks like WordPress, Joomla, and custom variants.</p>
+                        <a href="#contact" class="bento-link">Deploy CMS <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-video"></i></div>
+                    <div class="bento-content">
+                        <h3>Creative & Production Operations</h3>
+                        <p>End-to-end digital production: from high-fidelity branding and flyer design to cinematic videography and professional short-form content editing.</p>
+                        <a href="#contact" class="bento-link">Commission Production <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+
+                <div class="bento-card span-3">
+                    <div class="bento-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+                    <div class="bento-content">
+                        <h3>E-Commerce System Engineering</h3>
+                        <p>Fully functional, secure digital retail ecosystems engineered for high conversion rates. Features secure transaction integrations and responsive inventory panels built to support complex commercial operations.</p>
+                        <a href="#contact" class="bento-link">Initialize Store <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Engagement section-->
+
+    <section class="tiers-section" id="tiers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Engagement Tiers</h2>
+                <p>Select the scale of integration that matches your current growth stage.</p>
+            </div>
+
+            <!-- Tier Grid -->
+
+            <div class="tiers-grid">
+                <!-- Basic / Personal -->
+                <div class="tier-card">
+                    <h3>Basic / Personal</h3>
+                    <div class="price">UGX 500k - 900k</div>
+                    <p class="tier-desc">For static sites & blogs.</p>
                     <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li>1–5 page architecture</li>
+                        <li>Basic mobile responsiveness</li>
+                        <li>Deployment setup</li>
                     </ul>
+                    <a href="#contact" class="tier-btn">Initialize Tier</a>
                 </div>
 
-                <!-- Right -->
-                <div class="footer-right">
-                    <ul class="footer-socials">
-                        <li>
-                            <a href="https://www.facebook.com/profile.php?id=61571963966433&sk=about" target="_blank">
-                                <i class="fab fa-facebook-f"></i> Facebook
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://x.com/22237_news96" target="_blank">
-                                <i class="fab fa-twitter"></i> X (Twitter)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/clifford-robinson-098093344" target="_blank">
-                                <i class="fab fa-linkedin-in"></i> LinkedIn
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/256__stranger/" target="_blank">
-                                <i class="fab fa-instagram"></i> Instagram
-                            </a>
-                        </li>
+                <!-- Corporate / Small Business -->
+                <div class="tier-card active">
+                    <h3>Corporate / SMB</h3>
+                    <div class="price">UGX 1.2M - 2M</div>
+                    <p class="tier-desc">Dynamic CMS & service pages.</p>
+                    <ul>
+                        <li>Full content management</li>
+                        <li>Advanced SEO mapping</li>
+                        <li>Service-focused navigation</li>
                     </ul>
+                    <a href="#contact" class="tier-btn primary">Initialize Tier</a>
+                </div>
+
+                <!-- E-commerce / Enterprise -->
+                <div class="tier-card">
+                    <h3>E-commerce / Enterprise</h3>
+                    <div class="price">UGX 3.5M+</div>
+                    <p class="tier-desc">Custom stores & advanced systems.</p>
+                    <ul>
+                        <li>Payment gateway integration</li>
+                        <li>Custom management console</li>
+                        <li>High-traffic API scaling</li>
+                    </ul>
+                    <a href="#contact" class="tier-btn">Consult Architect</a>
+                </div>
+            </div>
+
+            <!-- Hosting & Maintenance Section -->
+            <div class="recurring-costs">
+                <div class="costs-box">
+                    <h4>Annual Renewal Estimates</h4>
+                    <p>Beyond design, ensure these essentials are budgeted annually:</p>
+                    <div class="cost-items">
+                        <span><strong>Domain Name:</strong> UGX 50,000 – 150,000/yr</span>
+                        <span><strong>Web Hosting:</strong> UGX 120,000 – 350,000/yr</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creative Add-Ons Section -->
+            <div class="creative-add-ons" style="margin-top: 60px;">
+                <h3>Creative & Production Add-Ons</h3>
+                <div class="add-on-grid">
+                    <div class="add-on-card">
+                        <h4>Flyer Design</h4>
+                        <p>Digital & Print layouts for social and corporate media.</p>
+                        <div class="add-on-price">From UGX 30,000 / $8</div>
+                    </div>
+                    <div class="add-on-card">
+                        <h4>Video Production</h4>
+                        <p>Full-day commercial shoots with professional lighting/audio.</p>
+                        <div class="add-on-price">From UGX 700,000 / $185</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
+
+    <!--portfolio-section-->
+
+
+    <!-- --- THE DEPLOYMENT LEDGER PORTFOLIO --- -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Deployment Ledger</h2>
+                <p>A proven track record of digital products engineered and maintained under our direct supervision.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Project: De Rain Eco Beach Resort (Flagship Integration 1) -->
+                <div class="project-card feature-highlight">
+                    <div class="project-visual">
+                        <img src="img/derain.png" alt="De Rain Eco Beach Resort Interface" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge hospitality">Luxury Hospitality</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">De Rain Eco Beach Resort</h3>
+                    <p class="project-desc">A premium luxury hospitality deployment featuring custom administrative operational consoles, live QR-order streaming matrices, and highly optimized search visibility campaigns built to capture global resort bookings.</p>
+                    <a href="https://derainresort.com/" target="_blank" class="portfolio-cta">View Live Resort Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Project: Ecca Photography Studio (Flagship Integration 2) -->
+                <div class="project-card feature-highlight">
+                    <div class="project-visual">
+                        <img src="img/ecca.png" alt="Ecca Photography Studio Interface" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge creative">Cinematic Portfolio</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">Ecca Photography Studio</h3>
+                    <p class="project-desc">A high-end, cinematic brand presentation architecture built with dark-mode contrast parameters. Features a dynamic filtered showcase grid and rapid image asset delivery systems tailored for media dominance.</p>
+                    <a href="https://eccaphotographystudio.com/" target="_blank" class="portfolio-cta">View Live Studio Showcase <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Project: 2237 News -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/Screenshot (347).PNG" alt="2237 News Platform" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge">CMS Platform</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">2237 News</h3>
+                    <p class="project-desc">A fast-growing news platform delivering transparent, real-time stories. Fully built with a complex management console, comprehensive team profiles, live market tables, and rapid mobile indexing interfaces.</p>
+                    <a href="#" class="portfolio-cta">View Live Project</a>
+                </div>
+
+                <!-- Project: Pan Africanist Promotion Team -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/Screenshot (346).PNG" alt="Pan Africanist Identity Platform" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge">Advocacy Hub</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">Pan Africanist Promotion Team</h3>
+                    <p class="project-desc">A dynamic identity platform uniting advocacy initiatives. Features custom visual assets, global visibility maps, and a structured regional business directory designed around a rich cultural layout aesthetic.</p>
+                    <a href="#" class="portfolio-cta">View Live Project</a>
+                </div>
+
+                <!-- Project: Reliable Fire & Safety Consultancy -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/Screenshot (386).PNG" alt="Reliable Fire Safety Platform" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge">Corporate B2B</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">Reliable Fire & Safety Consultancy</h3>
+                    <p class="project-desc">A responsive operational portal presenting B2B safety systems, emergency training setups, and verification protocols. Engineered with high-contrast, bold corporate elements for immediate user navigation.</p>
+                    <a href="#" class="portfolio-cta">View Live Project</a>
+                </div>
+
+                <!-- Project: Robinson Digital Services -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/rds.png" alt="Robinson Digital Services Console" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge">Flagship Portal</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">Robinson Digital Services</h3>
+                    <p class="project-desc">Our flagship web interface showcasing specialized digital systems. Features a responsive modular framework, granular performance details, and real-time support switching capabilities.</p>
+                    <a href="#" class="portfolio-cta">View Live Project</a>
+                </div>
+
+                <!-- Project: Wolo's Birds -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/wolo.png" alt="Wolo's Birds Documentation Portal" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge">Media Showcase</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">Wolo's Birds</h3>
+                    <p class="project-desc">An interactive portfolio showcasing high-definition media and nature documentation. Prioritizes optimized asset delivery layouts and smooth visual transition patterns for a clean browsing experience.</p>
+                    <a href="#" class="portfolio-cta">View Live Project</a>
+                </div>
+
+                <!-- Project: Homes Adventures -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/home.png" alt="Homes Adventures Systems" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge">Service Platform</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">Homes Adventures</h3>
+                    <p class="project-desc">A specialized interface structured for real-time electrical installations and service inquiries. Features an active lead configuration layout designed to maximize localized inbound phone and map conversions.</p>
+                    <a href="#" class="portfolio-cta">View Live Project</a>
+                </div>
+
+                <!-- Project: PAECHO Organization -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/paecho.png" alt="PAECHO Community Hub" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge">Nonprofit Hub</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">PAECHO Organization</h3>
+                    <p class="project-desc">A dedicated community development portal structured to maximize project visibility and donation workflows. Optimized layout presentation ensures accessible, high-performance messaging delivery.</p>
+                    <a href="#" class="portfolio-cta">View Live Project</a>
+                </div>
+
+                <!-- Project: Brownerica General Trading Ltd -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/brown.PNG" alt="Brownerica Global Trade Portal" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge">Enterprise B2B</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">Brownerica General Trading Ltd</h3>
+                    <p class="project-desc">A modern company interface engineered to present operations and global supply networks. Features an optimized asset structure designed for clean B2B lead generation tracking.</p>
+                    <a href="#" class="portfolio-cta">View Live Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--about-section-->
+
+    <!-- --- THE SYSTEM ARCHITECTS (ABOUT US) --- -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>The System Architects</h2>
+                <p>The specialized team managing frontend engineering and digital growth vectors.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Profile Block: Clifford Robinson -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="img/CEO.jpg" alt="Clifford C Robinson" />
+                    </div>
+                    <h3>Clifford C Robinson</h3>
+                    <div class="profile-role">Founder & Principal Systems Engineer</div>
+                    <p class="profile-bio">Specializing in building custom web interfaces, responsive mobile applications, and highly integrated administrative backends. Clifford directs the technical engineering framework for all agency operations.</p>
+                    <a href="#contact" class="btn-primary profile-btn">Hire Robinson</a>
+                </div>
+
+                <!-- Profile Block: Samuel -->
+                <div class="profile-card">
+                    <div class="profile-avatar sam">
+                        <img src="img/mario.jpg" alt="Samuel" />
+                    </div>
+                    <h3>Samuel</h3>
+                    <div class="profile-role">Lead Creative Content Strategist</div>
+                    <p class="profile-bio">Focused on high-impact digital messaging, user engagement profiling, and clear corporate communications. Samuel manages the creative outreach and visibility metrics for our partner networks.</p>
+                    <a href="#contact" class="btn-primary profile-btn">Hire Samuel</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--FAQ section-->
 
 
 
 
+
+
+
+    <!-- --- FRICTIONLESS FAQ SECTION --- -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frictionless FAQ</h2>
+                <p>Clear, responsive info on our typical timelines and platform access capabilities.</p>
+            </div>
+
+            <div class="faq-wrapper">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>What is included in the Starter Strategy Plan?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner-container">
+                            <p class="faq-inner-text">The Starter Strategy Plan contains an optimized, responsive single-page web environment, foundational search footprint setup, comprehensive web analytics tracking integration, and immediate deployment testing sequences.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>How long does it take to complete and launch a project?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner-container">
+                            <p class="faq-inner-text">A standard 1-to-5 page fully responsive interface is typically built, verified, and deployed within 7–10 days. More complex custom system integrations, management consoles, and advanced platforms generally trace a 15–22 day
+                                launch delivery path.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="theme-toggle" class="ui-btn theme-btn" aria-label="Toggle Theme">
+    <i class="fa-solid fa-moon" id="theme-icon"></i>
+</button>
+
+    <a href="#" id="back-to-top" class="ui-btn top-btn" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <a href="https://wa.me/256708976080" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div id="footer-placeholder"></div>
 
     <script>
-        window.onscroll = function() {
-            var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-            var backToTopButton = document.querySelector('.back-to-top');
-
-            if (scrollPosition > 300) { // Show button after scrolling 300px
-                backToTopButton.classList.add('show-back-to-top');
-            } else {
-                backToTopButton.classList.remove('show-back-to-top');
-            }
-        };
-
-        // Scroll to the top when the button is clicked
-        document.querySelector('.back-to-top').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        // Component Wiring Engine
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load footer component');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error wiring the footer component:', error));
     </script>
 
 
-    <script>
-        document.getElementById('modeToggle').addEventListener('click', function() {
-            var body = document.body;
-            body.classList.toggle('night-mode');
-            body.classList.toggle('day-mode');
-            var currentMode = body.classList.contains('night-mode') ? '🌞' : '🌙';
-            document.getElementById('modeToggle').textContent = currentMode;
-        });
 
-        // Default to Day Mode
-        document.body.classList.add('day-mode');
-    </script>
-
-
-
-
-
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const sideNav = document.getElementById('sideNav');
-        const closeBtn = document.getElementById('closeBtn');
-
-        // Open sidebar
-        menuToggle.addEventListener('click', () => {
-            sideNav.classList.add('active');
-        });
-
-        // Close sidebar
-        closeBtn.addEventListener('click', () => {
-            sideNav.classList.remove('active');
-        });
-
-        // Movable hamburger (desktop + touch)
-        let isDragging = false,
-            offsetX = 0,
-            offsetY = 0;
-
-        // Mouse
-        menuToggle.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            offsetX = e.clientX - menuToggle.offsetLeft;
-            offsetY = e.clientY - menuToggle.offsetTop;
-            menuToggle.style.cursor = 'grabbing';
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                menuToggle.style.left = `${e.clientX - offsetX}px`;
-                menuToggle.style.top = `${e.clientY - offsetY}px`;
-            }
-        });
-
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-            menuToggle.style.cursor = 'grab';
-        });
-
-        // Touch
-        menuToggle.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            const touch = e.touches[0];
-            offsetX = touch.clientX - menuToggle.offsetLeft;
-            offsetY = touch.clientY - menuToggle.offsetTop;
-        });
-
-        menuToggle.addEventListener('touchmove', (e) => {
-            if (isDragging) {
-                const touch = e.touches[0];
-                menuToggle.style.left = `${touch.clientX - offsetX}px`;
-                menuToggle.style.top = `${touch.clientY - offsetY}px`;
-            }
-        });
-
-        menuToggle.addEventListener('touchend', () => {
-            isDragging = false;
-        });
-    </script>
-
-
-
-
-
-
-    <script type="module" src="22.js"></script>
-
-
-
+    <script src="nav.js"></script>
+    <script src="home.js"></script>
+    <script src="daynight.js"></script>
 
 
 </body>

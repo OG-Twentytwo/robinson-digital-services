@@ -1,105 +1,180 @@
-/* Footer Styling */
-footer {
-  background-color: #111;
-  color: #ddd;
-  padding: 40px 0 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* --- TERMINAL FOOTER LAYOUT ARCHITECTURE --- */
+
+.site-footer {
+    background-color: #030504;
+    /* Extra dark obsidian base depth for footer separation */
+    padding: 80px 0 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    position: relative;
+    overflow: hidden;
 }
 
-.footer-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+
+/* Master Structure Balancing */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    /* Gives the brand descriptor room to present clearly */
+    gap: 64px;
+    align-items: flex-start;
+    margin-bottom: 60px;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 30px;
+
+/* Core Identity & Statement Styles */
+
+.footer-brand .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #f3f4f6;
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
-/* Left Section */
-.footer-left p {
-  font-size: 14px;
-  margin: 0;
-  color: #bbb;
+.footer-brand .logo span {
+    color: #00ffa3;
+    /* Brand core indicator color */
 }
 
-/* Middle Links */
-.footer-middle ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.footer-brand p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 360px;
+    margin-bottom: 28px;
 }
 
-.footer-middle a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
 
-.footer-middle a:hover {
-  color: #ff6f61;
-  text-decoration: underline;
-}
+/* Social Icon Anchors Framework */
 
-/* Social Links */
 .footer-socials {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    gap: 12px;
 }
 
-.footer-socials li a {
-  color: #ccc;
-  font-size: 14px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.3s ease;
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.footer-socials li a:hover {
-  color: #1da1f2;
+.footer-socials a:hover {
+    color: #060807;
+    background: #00ffa3;
+    border-color: #00ffa3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 255, 163, 0.2);
 }
 
-.footer-socials i {
-  font-size: 16px;
+
+/* Navigation Matrix List Structural Columns */
+
+.footer-links h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #f3f4f6;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-content {
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
     flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links ul li a {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #9ca3af;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-links ul li a:hover {
+    color: #00ffa3;
+    transform: translateX(4px);
+}
+
+
+/* --- RECONCILIATION BASEBAR (FOOTER BOTTOM) --- */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-  }
-
-  .footer-middle ul,
-  .footer-socials {
-    align-items: center;
-  }
-
-  .footer-middle ul {
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+    gap: 16px;
+}
 
-  .footer-socials {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.footer-bottom p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.85rem;
+}
+
+.system-power-tag {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.82rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: rgba(0, 255, 163, 0.4) !important;
+}
+
+
+/* ==========================================================================
+   --- FOOTER SYSTEM RESPONSIVE MEDIA LAYERS ---
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 60px 0 30px 0;
+    }
+    /* Convert row grid configuration into stack blocks safely */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+        margin-bottom: 44px;
+    }
+    .footer-brand p {
+        max-width: 100%;
+        /* Break container limits for small responsive viewports */
+    }
+    .footer-links h4 {
+        margin-bottom: 16px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding-top: 24px;
+    }
 }

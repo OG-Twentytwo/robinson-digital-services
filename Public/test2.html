@@ -4,50 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robinson Digital Services | Premier Full-Stack Engineering & Digital Operations</title>
-
-    <link rel="icon" type="image/png" href="img/favicon.png">
-
+    <title>Robinson Digital Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <link rel="stylesheet" href="genstyle.css">
     <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="btn.css">
+
+
+
 </head>
 
 <body>
 
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">
+            <a href="test2.html" class="logo">
                 <img src="favicon.ico/favicon.png" alt="RDS Logo" class="nav-logo-asset">
             </a>
-            <nav>
+
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <nav class="nav-menu">
                 <ul>
-                    <li><a href="#services">Capabilities</a></li>
-                    <li><a href="#portfolio">Deployment Ledger</a></li>
-                    <li><a href="#about">Architects</a></li>
-                    <li><a href="#faq">Frictionless FAQ</a></li>
+                    <li><a href="operational-capabilities.html">Capabilities</a></li>
+                    <li><a href="deployment-ledger.html">Deployment Ledger</a></li>
+                    <li><a href="architects.html">Architects</a></li>
+                    <li><a href="faq.html">Frictionless FAQ</a></li>
+                    <li><a href="engagement-tiers.html">Engagement Tiers</a></li>
                 </ul>
             </nav>
-            <a href="#contact" class="cta-btn">Command Audit</a>
+
+            <a href="contact2.html" class="cta-btn nav-desktop-cta">Command Audit</a>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-badge">
-                <i class="fa-solid fa-terminal"></i> Digital Operations & Systems Architected
+
+
+    <section class="landing">
+        <div class="landing-slideshow">
+            <div class="slide active" style="background-image: url('img/brown.PNG');"></div>
+            <div class="slide" style="background-image: url('img/home.png');"></div>
+            <div class="slide" style="background-image: url('img/paecho.png');"></div>
+        </div>
+
+        <div class="container landing-grid">
+            <div class="hero-content-block">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-terminal"></i> Digital Operations & Systems Architected
+                </div>
+                <h1>We Build High-Performance Digital Solutions That Stand Out Online</h1>
+                <p>I help businesses and individuals scale with premier web engineering, multi-platform development, automated AI operations, and highly aggressive search engine visibility strategies.</p>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Hire Our Agency</a>
+                    <a href="#services" class="cta-btn hero-secondary-btn">Explore Matrix</a>
+                </div>
             </div>
-            <h1>We Build High-Performance Digital Solutions That Stand Out Online</h1>
-            <p>I help businesses and individuals scale with premier web engineering, multi-platform development, automated AI operations, and highly aggressive search engine visibility strategies.</p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Hire Our Agency</a>
-                <a href="#services" class="cta-btn hero-secondary-btn">Explore Matrix</a>
+
+            <div class="landing-right">
+                <div class="profile-circle">
+                    <img src="img/CEO.jpg" alt="Clifford Robinson" class="profile-img" />
+
+                    <div class="social-icon facebook">
+                        <a href="https://www.facebook.com/profile.php?id=61571963966433&sk=about" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+
+                    <div class="social-icon twitter">
+                        <a href="https://x.com/22237_news96" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+
+                    <div class="social-icon instagram">
+                        <a href="https://www.instagram.com/256__stranger/?fbclid=IwZXh0bgNhZW0CMTEAAR5-vrecSaU-HuHqA0-gFUtKnjM_HvPAwe62Ga24rXFJBm-W0fIvnFqM1NYAyQ_aem_cG-QKXvESRMiSyUd8cyzWA" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <div class="social-icon linkedin">
+                        <a href="https://www.linkedin.com/in/clifford-robinson-098093344" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!--Services section-->
 
     <section class="services-section" id="services">
         <div class="container">
@@ -165,6 +218,17 @@
                     </div>
                 </div>
 
+                <div class="bento-card">
+                    <div class="bento-icon"><i class="fa-solid fa-video"></i></div>
+                    <div class="bento-content">
+                        <h3>Creative & Production Operations</h3>
+                        <p>End-to-end digital production: from high-fidelity branding and flyer design to cinematic videography and professional short-form content editing.</p>
+                        <a href="#contact" class="bento-link">Commission Production <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+
                 <div class="bento-card span-3">
                     <div class="bento-icon"><i class="fa-solid fa-basket-shopping"></i></div>
                     <div class="bento-content">
@@ -177,6 +241,93 @@
         </div>
     </section>
 
+    <!--Engagement section-->
+
+    <section class="tiers-section" id="tiers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Engagement Tiers</h2>
+                <p>Select the scale of integration that matches your current growth stage.</p>
+            </div>
+
+            <!-- Tier Grid -->
+
+            <div class="tiers-grid">
+                <!-- Basic / Personal -->
+                <div class="tier-card">
+                    <h3>Basic / Personal</h3>
+                    <div class="price">UGX 500k - 900k</div>
+                    <p class="tier-desc">For static sites & blogs.</p>
+                    <ul>
+                        <li>1–5 page architecture</li>
+                        <li>Basic mobile responsiveness</li>
+                        <li>Deployment setup</li>
+                    </ul>
+                    <a href="#contact" class="tier-btn">Initialize Tier</a>
+                </div>
+
+                <!-- Corporate / Small Business -->
+                <div class="tier-card active">
+                    <h3>Corporate / SMB</h3>
+                    <div class="price">UGX 1.2M - 2M</div>
+                    <p class="tier-desc">Dynamic CMS & service pages.</p>
+                    <ul>
+                        <li>Full content management</li>
+                        <li>Advanced SEO mapping</li>
+                        <li>Service-focused navigation</li>
+                    </ul>
+                    <a href="#contact" class="tier-btn primary">Initialize Tier</a>
+                </div>
+
+                <!-- E-commerce / Enterprise -->
+                <div class="tier-card">
+                    <h3>E-commerce / Enterprise</h3>
+                    <div class="price">UGX 3.5M+</div>
+                    <p class="tier-desc">Custom stores & advanced systems.</p>
+                    <ul>
+                        <li>Payment gateway integration</li>
+                        <li>Custom management console</li>
+                        <li>High-traffic API scaling</li>
+                    </ul>
+                    <a href="#contact" class="tier-btn">Consult Architect</a>
+                </div>
+            </div>
+
+            <!-- Hosting & Maintenance Section -->
+            <div class="recurring-costs">
+                <div class="costs-box">
+                    <h4>Annual Renewal Estimates</h4>
+                    <p>Beyond design, ensure these essentials are budgeted annually:</p>
+                    <div class="cost-items">
+                        <span><strong>Domain Name:</strong> UGX 50,000 – 150,000/yr</span>
+                        <span><strong>Web Hosting:</strong> UGX 120,000 – 350,000/yr</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creative Add-Ons Section -->
+            <div class="creative-add-ons" style="margin-top: 60px;">
+                <h3>Creative & Production Add-Ons</h3>
+                <div class="add-on-grid">
+                    <div class="add-on-card">
+                        <h4>Flyer Design</h4>
+                        <p>Digital & Print layouts for social and corporate media.</p>
+                        <div class="add-on-price">From UGX 30,000 / $8</div>
+                    </div>
+                    <div class="add-on-card">
+                        <h4>Video Production</h4>
+                        <p>Full-day commercial shoots with professional lighting/audio.</p>
+                        <div class="add-on-price">From UGX 700,000 / $185</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--portfolio-section-->
+
+
+    <!-- --- THE DEPLOYMENT LEDGER PORTFOLIO --- -->
     <section class="portfolio-section" id="portfolio">
         <div class="container">
             <div class="section-header">
@@ -185,7 +336,39 @@
             </div>
 
             <div class="portfolio-grid">
+                <!-- Project: De Rain Eco Beach Resort (Flagship Integration 1) -->
+                <div class="project-card feature-highlight">
+                    <div class="project-visual">
+                        <img src="img/derain.png" alt="De Rain Eco Beach Resort Interface" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge hospitality">Luxury Hospitality</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">De Rain Eco Beach Resort</h3>
+                    <p class="project-desc">A premium luxury hospitality deployment featuring custom administrative operational consoles, live QR-order streaming matrices, and highly optimized search visibility campaigns built to capture global resort bookings.</p>
+                    <a href="https://derainresort.com/" target="_blank" class="portfolio-cta">View Live Resort Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Project: Ecca Photography Studio (Flagship Integration 2) -->
+                <div class="project-card feature-highlight">
+                    <div class="project-visual">
+                        <img src="img/ecca.png" alt="Ecca Photography Studio Interface" class="project-img" />
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-badge creative">Cinematic Portfolio</span>
+                        <span class="credit-badge">Engineered by RDS</span>
+                    </div>
+                    <h3 class="project-title">Ecca Photography Studio</h3>
+                    <p class="project-desc">A high-end, cinematic brand presentation architecture built with dark-mode contrast parameters. Features a dynamic filtered showcase grid and rapid image asset delivery systems tailored for media dominance.</p>
+                    <a href="https://eccaphotographystudio.com/" target="_blank" class="portfolio-cta">View Live Studio Showcase <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Project: 2237 News -->
                 <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/Screenshot (347).PNG" alt="2237 News Platform" class="project-img" />
+                    </div>
                     <div class="project-meta">
                         <span class="project-badge">CMS Platform</span>
                         <span class="credit-badge">Engineered by RDS</span>
@@ -195,7 +378,11 @@
                     <a href="#" class="portfolio-cta">View Live Project</a>
                 </div>
 
+                <!-- Project: Pan Africanist Promotion Team -->
                 <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/Screenshot (346).PNG" alt="Pan Africanist Identity Platform" class="project-img" />
+                    </div>
                     <div class="project-meta">
                         <span class="project-badge">Advocacy Hub</span>
                         <span class="credit-badge">Engineered by RDS</span>
@@ -205,7 +392,11 @@
                     <a href="#" class="portfolio-cta">View Live Project</a>
                 </div>
 
+                <!-- Project: Reliable Fire & Safety Consultancy -->
                 <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/Screenshot (386).PNG" alt="Reliable Fire Safety Platform" class="project-img" />
+                    </div>
                     <div class="project-meta">
                         <span class="project-badge">Corporate B2B</span>
                         <span class="credit-badge">Engineered by RDS</span>
@@ -215,7 +406,11 @@
                     <a href="#" class="portfolio-cta">View Live Project</a>
                 </div>
 
+                <!-- Project: Robinson Digital Services -->
                 <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/rds.png" alt="Robinson Digital Services Console" class="project-img" />
+                    </div>
                     <div class="project-meta">
                         <span class="project-badge">Flagship Portal</span>
                         <span class="credit-badge">Engineered by RDS</span>
@@ -225,7 +420,11 @@
                     <a href="#" class="portfolio-cta">View Live Project</a>
                 </div>
 
+                <!-- Project: Wolo's Birds -->
                 <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/wolo.png" alt="Wolo's Birds Documentation Portal" class="project-img" />
+                    </div>
                     <div class="project-meta">
                         <span class="project-badge">Media Showcase</span>
                         <span class="credit-badge">Engineered by RDS</span>
@@ -235,7 +434,11 @@
                     <a href="#" class="portfolio-cta">View Live Project</a>
                 </div>
 
+                <!-- Project: Homes Adventures -->
                 <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/home.png" alt="Homes Adventures Systems" class="project-img" />
+                    </div>
                     <div class="project-meta">
                         <span class="project-badge">Service Platform</span>
                         <span class="credit-badge">Engineered by RDS</span>
@@ -245,7 +448,11 @@
                     <a href="#" class="portfolio-cta">View Live Project</a>
                 </div>
 
+                <!-- Project: PAECHO Organization -->
                 <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/paecho.png" alt="PAECHO Community Hub" class="project-img" />
+                    </div>
                     <div class="project-meta">
                         <span class="project-badge">Nonprofit Hub</span>
                         <span class="credit-badge">Engineered by RDS</span>
@@ -255,7 +462,11 @@
                     <a href="#" class="portfolio-cta">View Live Project</a>
                 </div>
 
+                <!-- Project: Brownerica General Trading Ltd -->
                 <div class="project-card">
+                    <div class="project-visual">
+                        <img src="img/brown.PNG" alt="Brownerica Global Trade Portal" class="project-img" />
+                    </div>
                     <div class="project-meta">
                         <span class="project-badge">Enterprise B2B</span>
                         <span class="credit-badge">Engineered by RDS</span>
@@ -268,6 +479,10 @@
         </div>
     </section>
 
+
+    <!--about-section-->
+
+    <!-- --- THE SYSTEM ARCHITECTS (ABOUT US) --- -->
     <section class="about-section" id="about">
         <div class="container">
             <div class="section-header">
@@ -276,16 +491,22 @@
             </div>
 
             <div class="team-grid">
+                <!-- Profile Block: Clifford Robinson -->
                 <div class="profile-card">
-                    <div class="profile-avatar">CR</div>
+                    <div class="profile-avatar">
+                        <img src="img/CEO.jpg" alt="Clifford C Robinson" />
+                    </div>
                     <h3>Clifford C Robinson</h3>
                     <div class="profile-role">Founder & Principal Systems Engineer</div>
                     <p class="profile-bio">Specializing in building custom web interfaces, responsive mobile applications, and highly integrated administrative backends. Clifford directs the technical engineering framework for all agency operations.</p>
                     <a href="#contact" class="btn-primary profile-btn">Hire Robinson</a>
                 </div>
 
+                <!-- Profile Block: Samuel -->
                 <div class="profile-card">
-                    <div class="profile-avatar sam">S</div>
+                    <div class="profile-avatar sam">
+                        <img src="img/mario.jpg" alt="Samuel" />
+                    </div>
                     <h3>Samuel</h3>
                     <div class="profile-role">Lead Creative Content Strategist</div>
                     <p class="profile-bio">Focused on high-impact digital messaging, user engagement profiling, and clear corporate communications. Samuel manages the creative outreach and visibility metrics for our partner networks.</p>
@@ -295,6 +516,15 @@
         </div>
     </section>
 
+    <!--FAQ section-->
+
+
+
+
+
+
+
+    <!-- --- FRICTIONLESS FAQ SECTION --- -->
     <section class="faq-section" id="faq">
         <div class="container">
             <div class="section-header">
@@ -303,69 +533,70 @@
             </div>
 
             <div class="faq-wrapper">
+                <!-- FAQ Item 1 -->
                 <div class="faq-item">
-                    <button class="faq-trigger">
-                        What is included in the Starter Strategy Plan?
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>What is included in the Starter Strategy Plan?</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-content">
-                        <p class="faq-inner-text">The Starter Strategy Plan contains an optimized, responsive single-page web environment, foundational search footprint setup, comprehensive web analytics tracking integration, and immediate deployment testing sequences.</p>
+                        <div class="faq-inner-container">
+                            <p class="faq-inner-text">The Starter Strategy Plan contains an optimized, responsive single-page web environment, foundational search footprint setup, comprehensive web analytics tracking integration, and immediate deployment testing sequences.</p>
+                        </div>
                     </div>
                 </div>
 
+                <!-- FAQ Item 2 -->
                 <div class="faq-item">
-                    <button class="faq-trigger">
-                        How long does it take to complete and launch a project?
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>How long does it take to complete and launch a project?</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-content">
-                        <p class="faq-inner-text">A standard 1-to-5 page fully responsive interface is typically built, verified, and deployed within 7–10 days. More complex custom system integrations, management consoles, and advanced platforms generally trace a 15–22 day launch
-                            delivery path.</p>
+                        <div class="faq-inner-container">
+                            <p class="faq-inner-text">A standard 1-to-5 page fully responsive interface is typically built, verified, and deployed within 7–10 days. More complex custom system integrations, management consoles, and advanced platforms generally trace a 15–22 day
+                                launch delivery path.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <button id="theme-toggle" class="ui-btn theme-btn" aria-label="Toggle Theme">
+    <i class="fa-solid fa-moon" id="theme-icon"></i>
+</button>
+
+    <a href="#" id="back-to-top" class="ui-btn top-btn" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <a href="https://wa.me/256708976080" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div id="footer-placeholder"></div>
 
     <script>
-        /* --- FACTION ACCORDION FAQ CONTROLLER --- */
-        document.querySelectorAll('.faq-trigger').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('i');
-
-                // Close other open tabs for an elite accordion look
-                document.querySelectorAll('.faq-content').forEach(item => {
-                    if (item !== content) {
-                        item.style.maxHeight = null;
-                        const otherIcon = item.previousElementSibling.querySelector('i');
-                        if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-                    }
-                });
-
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                    icon.style.transform = 'rotate(0deg)';
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    icon.style.transform = 'rotate(180deg)';
-                    icon.style.color = '#00ffa3';
-                }
-            });
-        });
-
-        /* --- FROSTED BENTO BACKGROUND MOUSE HOVER TRACKING --- */
-        document.querySelectorAll('.bento-card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--x', `${x}px`);
-                card.style.setProperty('--y', `${y}px`);
-            });
-        });
+        // Component Wiring Engine
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load footer component');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error wiring the footer component:', error));
     </script>
+
+
+
+    <script src="nav.js"></script>
+    <script src="home.js"></script>
+    <script src="daynight.js"></script>
+
+
 </body>
 
 </html>

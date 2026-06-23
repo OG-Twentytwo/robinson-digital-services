@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Deployment Ledger </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="genstyle.css">
+    <link rel="stylesheet" href="operational-capabilities.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="btn.css">
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="test2.html" class="logo">
+                <img src="favicon.ico/favicon.png" alt="RDS Logo" class="nav-logo-asset">
+            </a>
+
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="operational-capabilities.html">Capabilities</a></li>
+                    <li><a href="deployment-ledger.html">Deployment Ledger</a></li>
+                    <li><a href="architects.html">Architects</a></li>
+                    <li><a href="faq.html">Frictionless FAQ</a></li>
+                    <li><a href="engagement-tiers.html">Engagement Tiers</a></li>
+                </ul>
+            </nav>
+
+            <a href="contact2.html" class="cta-btn nav-desktop-cta">Command Audit</a>
+        </div>
+    </header>
+
+
+
+
+
+    <button id="theme-toggle" class="ui-btn theme-btn" aria-label="Toggle Theme">
+    <i class="fa-solid fa-moon" id="theme-icon"></i>
+</button>
+
+    <a href="#" id="back-to-top" class="ui-btn top-btn" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <a href="https://wa.me/256708976080" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Component Wiring Engine
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load footer component');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error wiring the footer component:', error));
+    </script>
+    <script src="nav.js"></script>
+    <script src="home.js"></script>
+    <script src="daynight.js"></script>
+
+
+</body>
+
+</html>
